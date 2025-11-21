@@ -95,24 +95,35 @@
         
         
       <h2>Stay Informed. Stay Empowered.</h2>
-        Receive text messages with the news you want to know.
+        <p>Receive text messages with the news you want to know.</p>
         
         <form action="POST" method="https://wp.zybooks.com/form-viewer.php">
-          Name
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required>
           
-          Mobile
+          <label for="phone">Mobile</label>
+          <input type="tel" name="phone" id="phone" required>
           
-          Notification Preferences
+          <fieldset>
+            <legend>Notification Preferences</legend>
+            
+            <label for="">Breaking News</label>
+            <input type="radio" name="breakingNews" value="breakingNews">
+            <label for="">Politics</label>
+            <input type="radio" name="politics" value="politics">
+            <label for="">Weather</label>
+            <input type="radio" name="weather" value="weather">
+            <label for="">Sports</label>
+            <input type="radio" name="sports" value="sports">
+            <label for="">Entertainment</label>
+            <input type="radio" name="entertainment" value="entertainment">
+            <label for="">World</label>
+            <input type="radio" name="world" value="world">
+            <label for="">Financial</label>
+            <input type="radio" name="financial" value="financial">
+          </fieldset>
           
-          Breaking News
-          Politics
-          Weather
-          Sports
-          Entertainment
-          World
-          Financial
-          
-          Subscribe
+          <button type="submit">Subscribe</button>
         </form>
       
       <h2>Follow Us</h2>
