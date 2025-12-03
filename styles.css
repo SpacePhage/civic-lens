@@ -148,6 +148,12 @@ header p {
   display: none;
 }
 
+.menu-button:hover {
+  cursor: pointer;
+  background-color: var(--blue-bulletin);
+  border: 1px solid var(--news-flash);
+}
+
 .mobile-nav.active {
   display: block;
 }
@@ -197,6 +203,7 @@ p {
   padding: 1rem;
   border: 1px solid black;
   box-shadow: 1px 1px 6px black;
+  margin-top: 0.5rem;
 }
 
 .article-cards {
@@ -245,6 +252,7 @@ p {
   border: 1px solid var(--story-subtitle);
   padding: 0.5rem 2rem;
   box-shadow: 1px 1px 6px var(--truth-text);
+  margin-top: 0.5rem;
 }
 
 #feat-articles p {
@@ -261,6 +269,14 @@ p {
   font-size: 1.25rem;
   max-width: 35ch;
   line-height: 1.4;
+}
+
+article {
+  transition: transform 0.3s ease-in-out;
+}
+
+article:hover {
+  transform: scale(1.02) translateY(-4px);
 }
 
 footer {
@@ -286,6 +302,16 @@ footer form {
   color: var(--watchdog-white);
   margin-bottom: 1.5rem;
   border: 1px solid var(--truth-text);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
 }
 
 form label {
@@ -321,6 +347,11 @@ form button{
   font-size: 1.5rem;
   font-family: var(--font-body);
   margin-bottom: 2rem;
+}
+
+form button:hover {
+  background-color: var(--watchdog-white);
+  color: var(--blue-bulletin);
 }
 
 fieldset {
@@ -368,6 +399,11 @@ footer a {
   font-weight: 500;
 }
 
+footer a:hover {
+  background-color: var(--blue-bulletin);
+  border: 1px solid var(--news-flash);
+}
+
 #social-media p {
   color: var(--watchdog-white);
   text-align: center;
@@ -391,6 +427,11 @@ footer a {
   .menu li {
     background: var(--news-flash);
     padding: 0.5rem;
+  }
+
+  .menu li:hover {
+    background-color: var(--blue-bulletin);
+    border: 1px solid var(--news-flash);
   }
 
   .menu a {
@@ -436,6 +477,16 @@ footer a {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 
+  .contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;;
+  }
+
+  .form-group {
+    display: grid;
+  }
+
 
 }
 
@@ -461,9 +512,36 @@ footer a {
 }
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: dark) {
+  main, footer, #feat-articles article {
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
 
+    footer p, #welcome p, h3, #feat-articles p {
+      color: var(--watchdog-white);
+    }
+  
+}
+
+@media (prefers-color-scheme: light) {
+main, footer, #feat-articles article {
+    background-color: var(--watchdog-white);
+    color: var(--truth-text);
+  }
+
+    footer p, #welcome p, h3, #feat-articles p {
+      color: var(--truth-text);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+}
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
-@supports (selector(:has(*))) {
-
+@supports (selector(:has(#menu-toggle:checked))) {
+  .mobile-nav:has(#menu-toggle:checked) .menu {
+    display: block;
+  }
 }

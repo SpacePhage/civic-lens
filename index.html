@@ -8,7 +8,7 @@
   <meta name="author" content="Civic Lens">
 
 <!-- ADD Open Graph Meta for title, description, image, url, type -->
-<meta property="og:title" content="Civic Lens"">
+<meta property="og:title" content="Civic Lens">
 <meta property="og:type" content="website">
 <meta property="og:image" content="">
 <meta property="og:url" content="">
@@ -126,11 +126,16 @@
           <p>Receive text messages with the news you want to know.</p>
         
           <form action="POST" method="https://wp.zybooks.com/form-viewer.php">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" required>
-        
-            <label for="phone">Mobile</label>
-            <input type="tel" name="phone" id="phone" required>
+            <div class="contact-info">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Mobile</label>
+                <input type="tel" name="phone" id="phone" required>
+              </div>
+            </div>
         
             <fieldset>
               <legend>Notification Preferences</legend>
