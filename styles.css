@@ -536,7 +536,9 @@ main, footer, #feat-articles article {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
+  article:hover {
+    transform: none;
+  }
 }
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
